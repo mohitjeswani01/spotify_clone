@@ -9,31 +9,31 @@ let masterSongname = document.getElementById('masterSongname');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 
 let songs = [
-    { songName: "O'meri laila", filePath: "songs/O Meri laila.mp3", coverPath: "covers/laila.png" },
-    { songName: "deva deva", filePath: "songs/deva deva.mp3", coverPath: "covers/deva.png" },
-    { songName: "Sahiba", filePath: "songs/Sahiba.mp3", coverPath: "covers/sahiba.png" },
-    { songName: "Ishq hai yeh", filePath: "songs/ishq hai.mp3", coverPath: "covers/ishq.png" },
-    { songName: "Nadaan Parindey", filePath: "songs/nadaan parindey.mp3", coverPath: "covers/parindey.png" },
-    { songName: "mitwa", filePath: "songs/mitwa.mp3", coverPath: "covers/mitwa.png" },
-    { songName: "Raanjhan", filePath: "songs/raanjhan.mp3", coverPath: "covers/ranjhaan.png" },
-    { songName: "ilahi", filePath: "songs/ilahi.mp3", coverPath: "covers/ilahi.png" },
-    { songName: "Teri Deewani", filePath: "songs/Teri Deewani.mp3", coverPath: "covers/deewani.png" },
-    { songName: "aaoge tum kabhi", filePath: "songs/aaoge.mp3", coverPath: "covers/aaoge.png" },
-    { songName: "admirin you", filePath: "songs/admirin you.mp3", coverPath: "covers/you.png" },
-    { songName: "da da dasse", filePath: "songs/da da dase.mp3", coverPath: "covers/dasse.png" },
-    { songName: "espresso", filePath: "songs/Espresso.mp3", coverPath: "covers/espresso.png" },
-    { songName: "hanuman chalisa", filePath: "songs/hanuman chalisa.mp3", coverPath: "covers/hanumanji.png" },
-    { songName: "kun faya kun", filePath: "songs/Kun Faya Kun.mp3", coverPath: "covers/kun.png" },
-    { songName: "maay bhavani", filePath: "songs/maay bhavani.mp3", coverPath: "covers/maay.png" },
-    { songName: "matargashti", filePath: "songs/matargashti.mp3", coverPath: "covers/matar.png" },
-    { songName: "mohit chauhan ", filePath: "songs/mohit c.mp3", coverPath: "covers/mohit.png" },
-    { songName: "millionaire", filePath: "songs/millionaire.mp3", coverPath: "covers/milli.png" },
-    { songName: "Tu chahiye", filePath: "songs/Tu chahiye.mp3", coverPath: "covers/tu chahiye.png" },
-    { songName: "sankatmochan ji", filePath: "songs/sankatmochan.mp3", coverPath: "covers/sankatmochan.png" }
+    { songName: "O'meri laila", filePath: "songs/O Meri laila.mp3", coverpath: "covers/laila.png" },
+    { songName: "deva deva", filePath: "songs/deva deva.mp3", coverpath: "covers/deva.png" },
+    { songName: "Sahiba", filePath: "songs/Sahiba.mp3", coverpath: "covers/sahiba.png" },
+    { songName: "Ishq hai yeh", filePath: "songs/ishq hai.mp3", coverpath: "covers/ishq.png" },
+    { songName: "Nadaan Parindey", filePath: "songs/nadaan parindey.mp3", coverpath: "covers/parindey.png" },
+    { songName: "mitwa", filePath: "songs/mitwa.mp3", coverpath: "covers/mitwa.png" },
+    { songName: "Raanjhan", filePath: "songs/raanjhan.mp3", coverpath: "covers/ranjhaan.png" },
+    { songName: "ilahi", filePath: "songs/ilahi.mp3", coverpath: "covers/ilahi.png" },
+    { songName: "Teri Deewani", filePath: "songs/Teri Deewani.mp3", coverpath: "covers/deewani.png" },
+    { songName: "aaoge tum kabhi", filePath: "songs/aaoge.mp3", coverpath: "covers/aaoge.png" },
+    { songName: "admirin you", filePath: "songs/admirin you.mp3", coverpath: "covers/you.png" },
+    { songName: "da da dasse", filePath: "songs/da da dase.mp3", coverpath: "covers/dasse.png" },
+    { songName: "espresso", filePath: "songs/Espresso.mp3", coverpath: "covers/espresso.png" },
+    { songName: "hanuman chalisa", filePath: "songs/hanuman chalisa.mp3", coverpath: "covers/hanumanji.png" },
+    { songName: "kun faya kun", filePath: "songs/Kun Faya Kun.mp3", coverpath: "covers/kun.png" },
+    { songName: "maay bhavani", filePath: "songs/maay bhavani.mp3", coverpath: "covers/maay.png" },
+    { songName: "matargashti", filePath: "songs/matargashti.mp3", coverpath: "covers/matar.png" },
+    { songName: "mohit chauhan ", filePath: "songs/mohit c.mp3", coverpath: "covers/mohit.png" },
+    { songName: "millionaire", filePath: "songs/millionaire.mp3", coverpath: "covers/milli.png" },
+    { songName: "Tu chahiye", filePath: "songs/Tu chahiye.mp3", coverpath: "covers/tu chahiye.png" },
+    { songName: "sankatmochan ji", filePath: "songs/sankatmochan.mp3", coverpath: "covers/sankatmochan.png" }
 ]
 
 songItems.forEach((element, i) => {
-    element.getElementsByTagName("img")[0].src = songs[i].coverPath;
+    element.getElementsByTagName("img")[0].src = songs[i].coverpath;
     element.getElementsByClassName("songName")[0].innerText = songs[i].songName;
 })
 
@@ -204,5 +204,11 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element) =>
         playSong();
     });
 });
+
+audioElement.addEventListener('ended', () => {
+    nextSong();
+});
+
+
 
 
